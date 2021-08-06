@@ -9,7 +9,7 @@ class EsunCreditCardServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            // $this->registerConfigs();
+            $this->registerConfigs();
         }
         $this->registerResources();
         
@@ -29,15 +29,9 @@ class EsunCreditCardServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'esun');
 
-        $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/esun/creditCard'),
-        ]);
+        // $this->publishes([
+        //     __DIR__.'/../resources/views' => resource_path('views/vendor/esun/creditCard'),
+        // ]);
     }
 
-    public function register()
-    {   
-        // $this->app->singleton('esun-credit-card', function ($app) {
-        //     return new EsunCreditCard();
-        // });
-    }
 }
